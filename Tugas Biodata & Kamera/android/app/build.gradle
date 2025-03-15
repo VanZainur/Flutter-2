@@ -1,0 +1,40 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+
+}
+
+android {
+    namespace "com.example.biodata"
+    compileSdk 35  // ubah sesuai dengan SDK di "flutter doctor"
+    ndkVersion "25.2.9519653" // pastikan sesuai dengan SDK
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId "com.example.biodata"
+        minSdk 21 // sesuaikan jika perlu
+        targetSdk 35 // ubah sesuai dengan SDK di "flutter doctor"
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source "../.."
+}
